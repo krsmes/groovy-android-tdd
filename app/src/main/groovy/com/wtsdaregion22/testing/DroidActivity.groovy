@@ -20,7 +20,7 @@ public class DroidActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
 
-        String messageText = "Hello Groovy!";
+        String messageText = "Hello Groovy! Is this thing on?";
         def message = findViewById(R.id.message) as TextView
         message.text = messageText;
     }
