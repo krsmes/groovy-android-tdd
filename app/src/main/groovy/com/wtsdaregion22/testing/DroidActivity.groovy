@@ -17,12 +17,12 @@ public class DroidActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test);
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_test)
 
-        String messageText = "Hello Groovy! Is this thing on?";
-        def message = findViewById(R.id.message) as TextView
-        message.text = messageText;
+        String messageText = "Hello Groovy! Is this thing on?"
+        TextView message = (TextView) findViewById(R.id.message)
+        message.setText(messageText)
     }
 
 }
