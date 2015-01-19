@@ -4,8 +4,8 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'org.robolectric:robolectric-gradle-plugin:0.13.+'
-        classpath 'me.champeau.gradle:gradle-groovy-android-plugin:0.3.4'
+        classpath 'org.robolectric:robolectric-gradle-plugin:0.14.0'
+        classpath 'org.codehaus.groovy:gradle-groovy-android-plugin:0.3.5'
     }
 }
 
@@ -38,10 +38,10 @@ android {
         exclude 'LICENSE.txt'
     }
 }
-apply plugin: 'me.champeau.gradle.groovy-android'
+apply plugin: 'groovyx.grooid.groovy-android'
 
 dependencies {
-    compile 'org.codehaus.groovy:groovy:2.4.0-beta-1:grooid'
+    compile 'org.codehaus.groovy:groovy:2.4.0-rc-2:grooid'
 
     androidTestCompile("com.google.android:android-espresso-bundled:1.1.1-SNAPSHOT")
 
