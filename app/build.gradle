@@ -4,13 +4,13 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'org.robolectric:robolectric-gradle-plugin:0.14.0'
+        classpath 'com.github.jcandksolutions.gradle:android-unit-test:2.1.1'
         classpath 'org.codehaus.groovy:gradle-groovy-android-plugin:0.3.5'
     }
 }
 
 apply plugin: 'com.android.application'
-apply plugin: 'robolectric'
+apply plugin: 'idea'
 
 android {
     compileSdkVersion 21
@@ -22,7 +22,7 @@ android {
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "com.google.android.apps.common.testing.testrunner.GoogleInstrumentationTestRunner"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -42,7 +42,23 @@ android {
         }
     }
 }
+
 apply plugin: 'groovyx.grooid.groovy-android'
+apply plugin: 'android-unit-test'
+
+androidUnitTest {
+    sourceSets {
+        test {
+            resources.srcDir(['src/test/res'])
+        }
+    }
+}
+
+idea {
+    module {
+        testOutputDir = file('build/test-classes/debug')
+    }
+}
 
 dependencies {
     repositories {
@@ -54,16 +70,20 @@ dependencies {
         }
     }
 
-    compile 'org.codehaus.groovy:groovy:2.4.0-rc-2:grooid'
+    compile 'org.codehaus.groovy:groovy:2.4.0:grooid'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:21.0.3'
+    compile 'com.squareup.dagger:dagger:1.2.2'
+    compile 'com.squareup.dagger:dagger-compiler:1.2.2'
 
-    androidTestCompile("com.google.android:android-espresso-bundled:1.1.1-SNAPSHOT")
-
-    androidTestCompile('junit:junit:4.+') {
+    testCompile 'org.hamcrest:hamcrest-integration:1.1'
+    testCompile 'org.hamcrest:hamcrest-core:1.1'
+    testCompile 'org.hamcrest:hamcrest-library:1.1'
+    testCompile('junit:junit:4.12') {
         exclude module: 'hamcrest-core'
-        exclude module: 'hamcrest-library'
-        exclude module: 'hamcrest-integration'
     }
-    androidTestCompile('org.robolectric:robolectric:3.0-SNAPSHOT') {
+
+    testCompile('org.robolectric:robolectric:3.0-SNAPSHOT') {
         exclude module: 'classworlds'
         exclude module: 'commons-logging'
         exclude module: 'httpclient'
@@ -80,9 +100,23 @@ dependencies {
         exclude module: 'wagon-http-lightweight'
         exclude module: 'wagon-provider-api'
     }
-}
 
-robolectric {
-    exclude '**/*Espresso*.class'
-    include '**/*Test.class'
+    androidTestCompile 'org.hamcrest:hamcrest-integration:1.1'
+    androidTestCompile 'org.hamcrest:hamcrest-core:1.1'
+    androidTestCompile 'org.hamcrest:hamcrest-library:1.1'
+    androidTestCompile('junit:junit-dep:4.11') {
+        exclude module: 'hamcrest-core'
+    }
+
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.0') {
+        exclude module: 'hamcrest-core'
+        exclude module: 'hamcrest-library'
+        exclude module: 'hamcrest-integration'
+        exclude group: 'javax.inject'
+    }
+    androidTestCompile('com.android.support.test:testing-support-lib:0.1') {
+        exclude module: 'hamcrest-core'
+        exclude module: 'hamcrest-library'
+        exclude module: 'hamcrest-integration'
+    }
 }
