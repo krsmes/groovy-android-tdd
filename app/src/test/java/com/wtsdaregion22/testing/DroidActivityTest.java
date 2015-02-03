@@ -8,6 +8,7 @@ import android.widget.TextView;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 
@@ -23,8 +24,8 @@ public class DroidActivityTest {
 
     @Test
     public void shouldCheckTextViewHasCorrectText() throws Exception {
-        String expected = "Hello world.. now with Groovy!";
-        DroidActivity myActivity = new DroidActivity();
+        String expected = "Hello Groovy! Is this thing on?";
+        DroidActivity myActivity = Robolectric.buildActivity(DroidActivity.class).create().get();
 
         TextView actualView = (TextView) myActivity.findViewById(R.id.message);
 

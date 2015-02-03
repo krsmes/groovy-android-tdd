@@ -2,7 +2,8 @@
 <resources>
 
     <string name="app_name">Testing</string>
-    <string name="hello_world">Hello world.. now with Groovy!</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="hello_world_groovy">Hello Groovy! Is this thing on?</string>
     <string name="action_settings">Settings</string>
     <string name="button_label">Spiffy Button</string>
 

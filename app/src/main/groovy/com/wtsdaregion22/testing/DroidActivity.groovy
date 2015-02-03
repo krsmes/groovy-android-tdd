@@ -21,9 +21,8 @@ public class DroidActivity extends Activity {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test)
 
-        String messageText = "Hello Groovy! Is this thing on?"
         TextView message = (TextView) findViewById(R.id.message)
-        message.setText(messageText)
+        message.setText(R.string.hello_world_groovy)
     }
 
     public void onSpiffyButtonClick(View view)
