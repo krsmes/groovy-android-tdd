@@ -9,4 +9,14 @@
         android:layout_height="wrap_content"
         android:id="@+id/message" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_label"
+        android:id="@+id/button_spiffy"
+        android:layout_below="@+id/message"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="53dp"
+        android:onClick="onSpiffyButtonClick" />
+
 </RelativeLayout>

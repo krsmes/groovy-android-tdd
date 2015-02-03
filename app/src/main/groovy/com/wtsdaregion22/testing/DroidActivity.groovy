@@ -4,6 +4,7 @@ import android.app.Activity
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -25,4 +26,9 @@ public class DroidActivity extends Activity {
         message.setText(messageText)
     }
 
+    public void onSpiffyButtonClick(View view)
+    {
+        TextView message = (TextView) findViewById(R.id.message)
+        message.setText("Spiffy Button is spiffy!")
+    }
 }
