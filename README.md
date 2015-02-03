@@ -6,7 +6,8 @@ First attempt at setting up Groovy on Android
 TO DOs
 ======
 
-- [ ] get unit tests running via command line
-- [ ] get unit tests running in Android Studio
-- [ ] get Robolectric test running via command line
-- [ ] get Robolectric running in Android Studio
+- [x] get unit tests running via command line
+- [x] get unit tests running in Android Studio
+- [x] get Robolectric test running via command line
+- [x] get Robolectric running in Android Studio
+- [ ] get Espresso tests running for acceptance-type tests
