@@ -29,5 +29,8 @@ public class DroidActivity extends Activity {
     {
         TextView message = (TextView) findViewById(R.id.message)
         message.setText("SpiffyButton is spiffy!")
+
+        Button revertButton = (Button) findViewById(R.id.revert_button)
+        revertButton.setVisibility(View.VISIBLE)
     }
 }
