@@ -28,6 +28,6 @@ public class DroidActivity extends Activity {
     public void onSpiffyButtonClick(View view)
     {
         TextView message = (TextView) findViewById(R.id.message)
-        message.setText("Spiffy Button is spiffy!")
+        message.setText("SpiffyButton is spiffy!")
     }
 }

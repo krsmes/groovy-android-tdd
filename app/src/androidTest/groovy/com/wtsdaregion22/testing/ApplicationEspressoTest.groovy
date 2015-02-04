@@ -1,6 +1,8 @@
 package com.wtsdaregion22.testing
 
-import android.support.test.espresso.Espresso;
+import android.support.test.espresso.Espresso
+import android.support.test.espresso.ViewAction
+import android.support.test.espresso.action.ViewActions;
 import android.support.test.espresso.assertion.ViewAssertions;
 import android.support.test.espresso.matcher.ViewMatchers;
 import android.test.suitebuilder.annotation.LargeTest
@@ -21,5 +23,10 @@ public class HelloGroovyWorldEspressoTest extends ActivityInstrumentationTestCas
 
     public void testListGoesOverTheFold() {
         Espresso.onView(ViewMatchers.withText("Hello Groovy! Is this thing on?")).check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
+    }
+
+    public void testButtonClickChangesTest() {
+        Espresso.onView(ViewMatchers.withId(R.id.button_spiffy)).perform(ViewActions.click())
+        Espresso.onView(ViewMatchers.withId(R.id.message)).check(ViewAssertions.matches(ViewMatchers.withText("SpiffyButton is spiffy!")))
     }
 }

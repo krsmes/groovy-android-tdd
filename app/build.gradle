@@ -27,6 +27,9 @@ android {
     buildTypes {
         release {
         }
+        debug {
+            debuggable true
+        }
     }
 
     packagingOptions {
@@ -35,16 +38,14 @@ android {
         exclude 'META-INF/LICENSE'
         exclude 'LICENSE.txt'
     }
-
-//    sourceSets {
-//        androidTest {
-//            setRoot('src/test')
-//        }
-//    }
 }
 
 apply plugin: 'groovyx.grooid.groovy-android'
 apply plugin: 'android-unit-test'
+
+afterEvaluate {
+    tasks.findByName("assembleDebug").dependsOn("testDebugClasses")
+}
 
 androidUnitTest {
     sourceSets {
@@ -120,3 +121,4 @@ dependencies {
         exclude module: 'hamcrest-integration'
     }
 }
+
