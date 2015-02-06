@@ -1,4 +1,4 @@
-package com.wtsdaregion22.testing;
+package com.mholtman.skeleton;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
@@ -7,7 +7,7 @@ import static org.junit.Assert.assertFalse;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.wtsdaregion22.testing.DroidActivity;
+import com.mholtman.skeleton.DroidActivity;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,8 +15,6 @@ import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
-
-import dalvik.annotation.TestTargetClass;
 
 @RunWith(RobolectricTestRunner.class)
 @Config(manifest="./src/main/AndroidManifest.xml", emulateSdk = 21)

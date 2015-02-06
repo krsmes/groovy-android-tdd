@@ -17,7 +17,7 @@ android {
     buildToolsVersion '20.0.0'
 
     defaultConfig {
-        applicationId "com.wtsdaregion22.testing"
+        applicationId "com.mholtman.skeleton"
         minSdkVersion 19
         targetSdkVersion 21
         versionCode 1

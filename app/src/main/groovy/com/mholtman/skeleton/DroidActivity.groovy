@@ -1,17 +1,11 @@
-package com.wtsdaregion22.testing;
+package com.mholtman.skeleton;
 
 import android.app.Activity
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
 import groovy.transform.CompileStatic
-
-import static android.view.View.GONE
-import static android.view.View.VISIBLE
 
 @CompileStatic
 public class DroidActivity extends Activity {
