@@ -26,6 +26,7 @@
         android:id="@+id/revert_button"
         android:layout_centerVertical="true"
         android:layout_alignEnd="@+id/button_spiffy"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        android:onClick="onRevertButtonClick" />
 
 </RelativeLayout>

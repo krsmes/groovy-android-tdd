@@ -27,4 +27,9 @@ public class DroidActivity extends Activity {
         Button revertButton = (Button) findViewById(R.id.revert_button)
         revertButton.setVisibility(View.VISIBLE)
     }
+
+    public void onRevertButtonClick(View view) {
+        TextView message = (TextView) findViewById(R.id.message)
+        message.setText(R.string.hello_world_groovy)
+    }
 }

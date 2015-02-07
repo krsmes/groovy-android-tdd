@@ -38,4 +38,12 @@ public class HelloGroovyWorldEspressoTest extends ActivityInstrumentationTestCas
         Espresso.onView(ViewMatchers.withId(R.id.revert_button)).check(ViewAssertions.matches((ViewMatchers.isCompletelyDisplayed())))
 
     }
+
+    public void testRevertButtonRevertsTheText() {
+        Espresso.onView(ViewMatchers.withId(R.id.button_spiffy)).perform(ViewActions.click())
+        Espresso.onView(ViewMatchers.withId(R.id.revert_button)).perform(ViewActions.click())
+
+        Espresso.onView(ViewMatchers.withId(R.id.message)).check(ViewAssertions.matches(ViewMatchers.withText(R.string.hello_world_groovy)))
+
+    }
 }
